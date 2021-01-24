@@ -63,7 +63,7 @@ std::string parserOfDir::printFormatted() {
         ss << file.parent_path().filename().string() << " "
            << file.filename().string() << std::endl;
     }
-    for (const auto& acc : accounts){
+    for (auto& acc : accounts){
         ss<<"broker:"<<acc.getBrocker()<<" "<<"account:"<<
           acc.getAccountNum()<<" "<<"files:"<<acc.getFileSum()<<
           " "<<"lastdate:"<<acc.getLastDate()<<std::endl;
