@@ -59,7 +59,7 @@ parserOfDir::parserOfDir(std::string pathForParse) {
 
 std::string parserOfDir::printFormatted() {
     std::stringstream ss;
-    for (auto file : files) {
+    for (const auto& file : files) {
         ss << file.parent_path().filename().string() << " "
            << file.filename().string() << std::endl;
     }
