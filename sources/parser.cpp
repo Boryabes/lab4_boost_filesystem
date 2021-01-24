@@ -63,7 +63,7 @@ std::string parserOfDir::printFormatted() {
         ss << file.parent_path().filename().string() << " "
            << file.filename().string() << std::endl;
     }
-    for (auto acc : accounts){
+    for (const auto& acc : accounts){
         ss<<"broker:"<<acc.getBrocker()<<" "<<"account:"<<
           acc.getAccountNum()<<" "<<"files:"<<acc.getFileSum()<<
           " "<<"lastdate:"<<acc.getLastDate()<<std::endl;
@@ -73,11 +73,11 @@ std::string parserOfDir::printFormatted() {
 
 
 void parserOfDir::assembleFilesForAcc() {
-    for (auto acc : accountsStrings) {
+    for (const auto& acc : accountsStrings) {
         account tempAcc;
         tempAcc.setAccountNumber(acc);
         int lastDate = 0;
-        for (auto file : files) {
+        for (const auto& file : files) {
             if (file.filename().string().substr(8, 8) == acc) {
 
                 tempAcc.incFilesSum();
